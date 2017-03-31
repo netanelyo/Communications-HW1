@@ -73,10 +73,7 @@ void calculate_hamming_code(char* in_buff, char* out_buff, unsigned int in_size,
 			mask = checkbits[j];
 			/* Mapping data bits from 57 bits of data to 63 bits array with redundancy */
 			for (k = checkbits[j]; k < checkbits[j+1] - 1; k++)
-			{
 				out_buff[offset_out + k] = in_buff[offset_in + l++];
-			}
-
 		}
 
 		for (j = 0; j < NUM_OF_CHECKBITS; j++)

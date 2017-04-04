@@ -224,7 +224,7 @@ int main(int argc, char** argv)
 		
 	}
 
-	to_write = sprintf(info_buff, "%d:%d:%d:\0", received, wrote, corrected);
+	to_write = sprintf(info_buff, "%d:%d:%d:", received, wrote, corrected);
 	bytes_wrtn = 0;
 
 	/* Sending transmition and error correction info to sender */
@@ -256,7 +256,7 @@ int main(int argc, char** argv)
 
 	fprintf(stderr, "received: %d bytes\n", received);
 	fprintf(stderr, "wrote: %d bytes\n", wrote);
-	fprintf(stderr, "corrected: %d bytes\n", corrected);
+	fprintf(stderr, "corrected: %d errors\n", corrected);
 
 	closesocket(sock);
 	fclose(output_file);

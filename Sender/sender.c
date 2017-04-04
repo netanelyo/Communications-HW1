@@ -244,7 +244,7 @@ int main(int argc, char** argv)
 	sscanf(info_buff, "%d:%d:%d:", &received, &recons, &corrected);
 	fprintf(stderr, "received: %d bytes\n", received);
 	fprintf(stderr, "reconstructed: %d bytes\n", recons);
-	fprintf(stderr, "corrected: %d bytes\n", corrected);
+	fprintf(stderr, "corrected: %d errors\n", corrected);
 
 	WSACleanup();
 

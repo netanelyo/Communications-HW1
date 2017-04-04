@@ -26,7 +26,7 @@ int add_noise_to_data(char* buff, int size, int seed, double probability)
 		for (j = 0; j < 8; j++)
 		{
 			random_num = (double)rand() / RAND_MAX;
-			if (random_num - probability < 0.0)
+			if ((probability == 1.0) || (random_num - probability < 0.0))
 			{
 				buff[i] ^= (mask << j);
 				bits_flipped++;
@@ -205,7 +205,7 @@ int main(int argc, char** argv)
 		return -1;
 	}
 
-	/*if we got here, count the sender closed the socket for sending data*/
+	/*if we got here, the sender closed the socket for sending data*/
 	status = shutdown(receiver_sock, SD_SEND);
 	if (status == SOCKET_ERROR)
 	{

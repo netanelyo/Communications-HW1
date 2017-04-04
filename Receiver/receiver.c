@@ -164,7 +164,7 @@ int main(int argc, char** argv)
 	output_file = fopen(argv[3], "wb");
 	if (!output_file)
 	{
-		fprintf(stderr, "Error opening file for binary write\n");
+		fprintf(stderr, "Error opening/creating file for binary write\n");
 		closesocket(sock);
 		WSACleanup();
 		return -1;

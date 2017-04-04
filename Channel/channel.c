@@ -14,7 +14,7 @@ void close_all_sockets(SOCKET* sock_1, SOCKET* sock_2, SOCKET* sock_3, SOCKET* s
 	closesocket(*sock_4);
 }
 
-int add_noise_to_data(char* buff, int size, int seed, double probability)
+int add_noise_to_data(char* buff, int size, double probability)
 {
 	double			random_num;
 	int				i, j;
@@ -176,7 +176,7 @@ int main(int argc, char** argv)
 	while ((bytes_received = recv(sender_sock, buff, BUFF_LEN, 0)) > 0)
 	{
 		total_bytes += bytes_received;
-		bits_flipped += add_noise_to_data(buff, bytes_received, seed, probability);
+		bits_flipped += add_noise_to_data(buff, bytes_received, probability);
 		to_send = bytes_received;
 		bytes_sent = 0;
 		current_bytes_sent = 0;
